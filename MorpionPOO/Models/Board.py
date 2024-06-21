@@ -17,7 +17,7 @@ class Board:
 
     def FindCell(self, x, y):
         for cell in self.cells:
-            if cell.x <= x <= cell.x+1 and self.CellSize*cell.y <= y <= self.CellSize*cell.y + cell.size:
+            if cell.x == x and cell.y == y:
                 return cell
 
 

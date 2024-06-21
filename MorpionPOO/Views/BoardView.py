@@ -24,15 +24,19 @@ class BoardView:
 
     def DrawCross(self, COLOR, Cell : Cell):
         CrossPosition = self.CellSize/4
-        pygame.draw.line(self.screen, COLOR, (Cell.x+CrossPosition, Cell.y + CrossPosition), (Cell.x+3*CrossPosition, Cell.y + 3*CrossPosition))
-        pygame.draw.line(self.screen, COLOR, (Cell.x + 3*CrossPosition, Cell.y + CrossPosition),
-                         (Cell.x +  CrossPosition, Cell.y + 3 * CrossPosition))
+        Cell_x = Cell.x * self.CellSize
+        Cell_y = Cell.y * self.CellSize
+        pygame.draw.line(self.screen, COLOR, (Cell_x+CrossPosition, Cell_y + CrossPosition), (Cell_x+3*CrossPosition, Cell_y + 3*CrossPosition))
+        pygame.draw.line(self.screen, COLOR, (Cell_x + 3*CrossPosition, Cell_y + CrossPosition),
+                         (Cell_x +  CrossPosition, Cell_y + 3 * CrossPosition))
         pygame.display.flip()
 
     def DrawCircle(self, COLOR, Cell : Cell):
         CellSize = Cell.size
         CellCenter = CellSize/2
-        pygame.draw.circle(self.screen, COLOR, (Cell.x+CellCenter, Cell.y + CellCenter), CellCenter/2, 5)
+        Cell_x = Cell.x * self.CellSize
+        Cell_y = Cell.y * self.CellSize
+        pygame.draw.circle(self.screen, COLOR, (Cell_x+CellCenter, Cell_y + CellCenter), CellCenter/2, 5)
         pygame.display.flip()
 
     def UpdateCell(self, Player : Player, Cell : Cell):

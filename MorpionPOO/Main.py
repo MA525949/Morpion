@@ -31,5 +31,11 @@ while Game:
             GameController.TryPlay(mouse_x, mouse_y)
     if GameController.IsWinnerRow(Alignment) is not None :
         Game = False
+    if GameController.IsWinnerColumn(Alignment) is not None :
+        Game = False
+    if GameController.IsWinnerDiag1(Alignment) is not None :
+        Game = False
+    if GameController.IsWinnerDiag2(Alignment) is not None :
+        Game = False
 
 
